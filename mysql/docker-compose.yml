@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  db:
+    image: mysql
+    container_name: "my-mysqldb"
+    volumes:
+      - ./db:/var/lib/mysql
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: x#R?2tR!
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
