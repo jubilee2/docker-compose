@@ -2,7 +2,7 @@ version: "2"
 services:
     mongodb:
         image: mongo:latest
-        container_name: "my-mongo"
+        container_name: mongodb
         restart: always
         environment:
           - MONGO_DATA_DIR=/data/db
@@ -11,4 +11,17 @@ services:
           - ./db:/data/db
         ports:
             - 27017:27017
-
+    mongoexpress:
+        image: mongo-express
+        container_name: mongo-express
+        links:
+          - mongodb:mongo
+        restart: always
+        ports:
+          - 8081:8081
+        environment:
+          - ME_CONFIG_OPTIONS_EDITORTHEME=ambiance
+          - ME_CONFIG_BASICAUTH_USERNAME=golfCoffee
+          - ME_CONFIG_BASICAUTH_PASSWORD=gcAdmin5r
+        depends_on:
+          - mongodb
