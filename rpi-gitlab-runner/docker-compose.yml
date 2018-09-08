@@ -1,0 +1,10 @@
+version: "2.0"
+services:
+  runner:
+    image: klud/gitlab-runner
+    container_name: arm-runner
+    restart: always
+    volumes:
+      - ./.runner:/etc/gitlab-runner
+      - /var/run/docker.sock:/var/run/docker.sock
+
