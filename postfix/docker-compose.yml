@@ -1,0 +1,12 @@
+version: '2'
+services:
+  postfix:
+    image: juanluisbaptiste/postfix:latest
+    env_file:
+      - ../../credentials-smtp.env
+    restart: always
+    volumes:
+     - "/etc/localtime:/etc/localtime:ro"
+     - mail_queue:/var/spool/postfix 
+  volumes:
+    mail_queue:
