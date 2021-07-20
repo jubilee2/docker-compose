@@ -2,7 +2,7 @@ version: '2'
 
 services:
   db:
-    image: hypriot/rpi-mysql
+    image: jubilee2/rpi-mariadb:v10.4.19
     container_name: "my-mysqldb"
     volumes:
       - ./db:/var/lib/mysql
