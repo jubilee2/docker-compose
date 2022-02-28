@@ -1,1 +1,4 @@
 */db/
+rpi-pihole/etc-pihole/
+rpi-pihole/var-log/
+rpi-pihole/etc-dnsmasq.d/
