@@ -1,6 +1,7 @@
 version: "3"
 
 # More info at https://github.com/pi-hole/docker-pi-hole/ and https://docs.pi-hole.net/
+
 services:
   pihole:
     container_name: pihole
@@ -22,5 +23,5 @@ services:
       # - './var-log/pihole.log:/var/log/pihole.log'
     #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
     cap_add:
-      - NET_ADMIN # Recommended but not required (DHCP needs NET_ADMIN)      
+      - NET_ADMIN # Recommended but not required (DHCP needs NET_ADMIN)
     restart: unless-stopped
